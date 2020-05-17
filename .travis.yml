@@ -14,7 +14,7 @@ after_success:
     - docker build -t itsguccimane/multi-server ./server
     - docker build -t itsguccimane/multi-worker ./worker
     # Login to Docker CLI
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-s 
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take thos images and push to Docker Hub
     - docker push itsguccimane/multi-client
     - docker push itsguccimane/multi-server
